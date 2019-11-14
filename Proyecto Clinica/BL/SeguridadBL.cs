@@ -8,20 +8,24 @@ namespace BL
 {
     public class SeguridadBL
     {
+        Contexto _contexto;
+
+        public SeguridadBL()
+        {
+            _contexto = new Contexto();
+        }
+
        public bool Autorizar(string usuario ,string contrasena)
         {
-            if (usuario == "admin" && contrasena == "123")
+            var usuarios = _contexto.Usuarios.ToList();
+
+            foreach (var usuarioDB in usuarios)
             {
-                return true;
-            }
-            else
-            {
-                if (usuario == "user" && contrasena == "456")
+                if (usuario == usuarioDB.Nombre && contrasena == usuarioDB.Contrasena)
                 {
                     return true;
                 }
             }
-
             return false;
         }
     }

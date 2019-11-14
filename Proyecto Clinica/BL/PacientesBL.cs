@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,45 +10,30 @@ namespace BL
 {
     public class PacientesBL
     {
+        Contexto _contexto;
         public BindingList<Paciente> ListaPaciente { get; set; }
 
         public PacientesBL()
         {
+            _contexto = new Contexto();
             ListaPaciente = new BindingList<Paciente>();
-
-            var paciente1 = new Paciente();
-            var paciente2 = new Paciente();
-            var paciente3 = new Paciente();
-
-            paciente1.Id = 1;
-            paciente1.Nombre = "Axel Josue Pineda Rivera";
-            paciente1.Edad = 22;
-            paciente1.Telefono = 87762354;
-            paciente1.Direccion = "Villanueva, Cortes";
-            paciente1.NoIdentidad = "0505199733098";
-
-            paciente2.Id = 2;
-            paciente2.Nombre = "Alejandra Rosario Paredes Coello";
-            paciente2.Edad = 20;
-            paciente2.Telefono = 32459867;
-            paciente2.Direccion = "San Pedro Sula, Cortes";
-            paciente2.NoIdentidad = "05101999956234";
-
-            paciente3.Id = 3;
-            paciente3.Nombre = "Miguel Angel Pavon Rodriguez";
-            paciente3.Edad = 32;
-            paciente3.Telefono = 96765487;
-            paciente3.Direccion = "Potrerillos, Cortes";
-            paciente3.NoIdentidad = "0505199456723";
-
-            ListaPaciente.Add(paciente1);
-            ListaPaciente.Add(paciente2);
-            ListaPaciente.Add(paciente3);
         }
 
         public BindingList<Paciente> ObtenerPaciente()
         {
+            _contexto.Pacientes.Load();
+            ListaPaciente = _contexto.Pacientes.Local.ToBindingList();
+
             return ListaPaciente;
+        }
+
+        public void CancelarCambios()
+        {
+            foreach (var CnCam in _contexto.ChangeTracker.Entries())
+            {
+                CnCam.State = EntityState.Unchanged;
+                CnCam.Reload();
+            }
         }
 
         public Resultado GuardarPaciente(Paciente paciente)
@@ -58,10 +44,7 @@ namespace BL
                 return resultado;
             }
 
-            if(paciente.Id == 0)
-            {
-                paciente.Id = ListaPaciente.Max(item =>item.Id) + 1;
-            }
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -72,6 +55,7 @@ namespace BL
             var nuevoPaciente = new Paciente();
             ListaPaciente.Add(nuevoPaciente);
         }
+
         public bool EliminarPaciente(int id)
         {
             foreach (var paciente in ListaPaciente)
@@ -79,6 +63,7 @@ namespace BL
                 if(paciente.Id == id)
                 {
                     ListaPaciente.Remove(paciente);
+                    _contexto.SaveChanges();
                     return true;
                 }
             }
@@ -109,6 +94,17 @@ namespace BL
                 resultado.Exitoso = false;
             }
 
+            if (paciente.CategoriaId == 0)
+            {
+                resultado.Mensaje = "Seleccione una categoria";
+                resultado.Exitoso = false;
+            }
+
+            if (paciente.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione un tipo";
+                resultado.Exitoso = false;
+            }
 
             return resultado;
         }
@@ -122,6 +118,11 @@ namespace BL
         public string Direccion { get; set; }
         public int Edad { get; set; }
         public string NoIdentidad { get; set; }
+        public byte[] Foto { get; set; }
+        public int CategoriaId { get; set; }
+        public Categoria Categoria { get; set; }
+        public int TipoId { get; set; }
+        public Tipo Tipo { get; set; }
     }
 
     public class Resultado

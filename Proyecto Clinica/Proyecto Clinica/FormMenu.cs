@@ -44,7 +44,7 @@ namespace Proyecto_Clinica
 
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formDoctores = new FormMedicamentos();
+            var formDoctores = new FormDoctores();
             formDoctores.MdiParent = this;
             formDoctores.Show();
 
