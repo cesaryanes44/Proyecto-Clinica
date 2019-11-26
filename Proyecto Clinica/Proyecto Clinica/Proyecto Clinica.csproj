@@ -55,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCitas.Designer.cs">
+      <DependentUpon>FormCitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDoctores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDoctores.Designer.cs">
       <DependentUpon>FormDoctores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFactura.Designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -87,8 +99,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCitas.resx">
+      <DependentUpon>FormCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDoctores.resx">
       <DependentUpon>FormDoctores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -114,7 +132,11 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.CategoriasBL.datasource" />
+    <None Include="Properties\DataSources\BL.CitasBL.datasource" />
     <None Include="Properties\DataSources\BL.DoctoresBL.datasource" />
+    <None Include="Properties\DataSources\BL.FacturaBL.datasource" />
+    <None Include="Properties\DataSources\BL.Hora.datasource" />
+    <None Include="Properties\DataSources\BL.HoraBL.datasource" />
     <None Include="Properties\DataSources\BL.Paciente.datasource" />
     <None Include="Properties\DataSources\BL.PacientesBL.datasource" />
     <None Include="Properties\DataSources\BL.SeguridadBL.datasource" />

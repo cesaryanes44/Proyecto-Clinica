@@ -27,5 +27,8 @@ namespace BL
         public DbSet<Tipo> Tipos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Doctor> Doctores { get; set; }
+        public DbSet<Factura> Facturas { get; set; }
+        public DbSet<Cita> Citas { get; set; }
+        public DbSet<Hora> Horas { get; set; }
     }
 }

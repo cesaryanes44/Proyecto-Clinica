@@ -50,9 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriasBL.cs" />
+    <Compile Include="CitasBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="DatosdeInicio.cs" />
     <Compile Include="DoctoresBL.cs" />
+    <Compile Include="FacturaBL.cs" />
+    <Compile Include="Hora.cs" />
     <Compile Include="PacientesBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

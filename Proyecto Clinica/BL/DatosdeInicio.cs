@@ -12,8 +12,8 @@ namespace BL
         protected override void Seed(Contexto contexto)
         {
             var usuarioAdmin = new Usuario();
-            usuarioAdmin.Nombre = "admin";
-            usuarioAdmin.Contrasena = "123";
+            usuarioAdmin.Nombre = "cesar";
+            usuarioAdmin.Contrasena = "1234";
 
             contexto.Usuarios.Add(usuarioAdmin);
 
@@ -40,6 +40,11 @@ namespace BL
             var tipo3 = new Tipo();
             tipo3.Descripcion = "Alta";
             contexto.Tipos.Add(tipo3);
+
+            var hora1 = new Hora();
+            hora1.Descripcion = "7:00";
+            contexto.Horas.Add(hora1);
+
 
             base.Seed(contexto);
         }

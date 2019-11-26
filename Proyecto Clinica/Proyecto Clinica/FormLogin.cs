@@ -29,7 +29,7 @@ namespace Proyecto_Clinica
             contrasena = textBox2.Text;
 
             button1.Enabled = false;
-            button2.Text = "Verificando...";
+            button1.Text = "Verificando...";
             Application.DoEvents();
 
             var resultado = _seguridad.Autorizar(usuario, contrasena);
