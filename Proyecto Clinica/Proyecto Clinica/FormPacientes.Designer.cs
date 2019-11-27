@@ -86,7 +86,7 @@
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(16, 211);
+            direccionLabel.Location = new System.Drawing.Point(16, 221);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new System.Drawing.Size(55, 13);
             direccionLabel.TabIndex = 1;
@@ -95,7 +95,7 @@
             // edadLabel
             // 
             edadLabel.AutoSize = true;
-            edadLabel.Location = new System.Drawing.Point(16, 185);
+            edadLabel.Location = new System.Drawing.Point(16, 191);
             edadLabel.Name = "edadLabel";
             edadLabel.Size = new System.Drawing.Size(35, 13);
             edadLabel.TabIndex = 3;
@@ -113,7 +113,7 @@
             // noIdentidadLabel
             // 
             noIdentidadLabel.AutoSize = true;
-            noIdentidadLabel.Location = new System.Drawing.Point(16, 159);
+            noIdentidadLabel.Location = new System.Drawing.Point(16, 165);
             noIdentidadLabel.Name = "noIdentidadLabel";
             noIdentidadLabel.Size = new System.Drawing.Size(71, 13);
             noIdentidadLabel.TabIndex = 7;
@@ -131,7 +131,7 @@
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(16, 237);
+            telefonoLabel.Location = new System.Drawing.Point(16, 247);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
             telefonoLabel.TabIndex = 11;
@@ -140,7 +140,7 @@
             // categoriaIdLabel
             // 
             categoriaIdLabel.AutoSize = true;
-            categoriaIdLabel.Location = new System.Drawing.Point(16, 133);
+            categoriaIdLabel.Location = new System.Drawing.Point(16, 136);
             categoriaIdLabel.Name = "categoriaIdLabel";
             categoriaIdLabel.Size = new System.Drawing.Size(55, 13);
             categoriaIdLabel.TabIndex = 16;
@@ -300,7 +300,7 @@
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacienteBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(93, 208);
+            this.direccionTextBox.Location = new System.Drawing.Point(93, 218);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(282, 20);
             this.direccionTextBox.TabIndex = 2;
@@ -308,7 +308,7 @@
             // edadTextBox
             // 
             this.edadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacienteBindingSource, "Edad", true));
-            this.edadTextBox.Location = new System.Drawing.Point(93, 182);
+            this.edadTextBox.Location = new System.Drawing.Point(93, 188);
             this.edadTextBox.Name = "edadTextBox";
             this.edadTextBox.Size = new System.Drawing.Size(282, 20);
             this.edadTextBox.TabIndex = 4;
@@ -325,7 +325,7 @@
             // noIdentidadTextBox
             // 
             this.noIdentidadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacienteBindingSource, "NoIdentidad", true));
-            this.noIdentidadTextBox.Location = new System.Drawing.Point(93, 156);
+            this.noIdentidadTextBox.Location = new System.Drawing.Point(93, 162);
             this.noIdentidadTextBox.Name = "noIdentidadTextBox";
             this.noIdentidadTextBox.Size = new System.Drawing.Size(282, 20);
             this.noIdentidadTextBox.TabIndex = 8;
@@ -341,7 +341,7 @@
             // telefonoTextBox
             // 
             this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacienteBindingSource, "Telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(93, 234);
+            this.telefonoTextBox.Location = new System.Drawing.Point(93, 244);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(282, 20);
             this.telefonoTextBox.TabIndex = 12;
@@ -392,7 +392,7 @@
             this.categoriaIdComboBox.DisplayMember = "Descripcion";
             this.categoriaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoriaIdComboBox.FormattingEnabled = true;
-            this.categoriaIdComboBox.Location = new System.Drawing.Point(93, 130);
+            this.categoriaIdComboBox.Location = new System.Drawing.Point(93, 136);
             this.categoriaIdComboBox.Name = "categoriaIdComboBox";
             this.categoriaIdComboBox.Size = new System.Drawing.Size(282, 21);
             this.categoriaIdComboBox.TabIndex = 17;
@@ -419,7 +419,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 290);
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.images;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(624, 344);
             this.Controls.Add(tipoIdLabel);
             this.Controls.Add(this.tipoIdComboBox);
             this.Controls.Add(categoriaIdLabel);

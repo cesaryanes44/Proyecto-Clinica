@@ -95,7 +95,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.Candado;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(279, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(295, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 89);
             this.pictureBox1.TabIndex = 6;
@@ -105,9 +105,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.g_20_historia_clinica_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(391, 252);
+            this.ClientSize = new System.Drawing.Size(407, 252);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);

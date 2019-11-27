@@ -82,7 +82,8 @@ namespace BL
     public class Cita
     {
         public int Id { get; set; }
-        public String Hora { get; set; }
+        public int HoraId { get; set; }
+        public Hora Hora { get; set; }
         public DateTime Fecha { get; set; }
         public String Paciente { get; set; }
         public string Doctor { get; set; }

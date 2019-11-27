@@ -63,6 +63,16 @@ namespace Proyecto_Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _72003ng01 {
+            get {
+                object obj = ResourceManager.GetObject("72003ng01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Candado {
             get {
                 object obj = ResourceManager.GetObject("Candado", resourceCulture);
@@ -76,6 +86,46 @@ namespace Proyecto_Clinica.Properties {
         internal static System.Drawing.Bitmap g_20_historia_clinica_ {
             get {
                 object obj = ResourceManager.GetObject("g_20_historia_clinica_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap integral {
+            get {
+                object obj = ResourceManager.GetObject("integral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sala_espera_medico_oficina_practicante_18591_6285 {
+            get {
+                object obj = ResourceManager.GetObject("sala-espera-medico-oficina-practicante_18591-6285", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sala_espera_mostrador_ilustracion_aeropuerto_1262_16630 {
+            get {
+                object obj = ResourceManager.GetObject("sala-espera-mostrador-ilustracion-aeropuerto_1262-16630", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

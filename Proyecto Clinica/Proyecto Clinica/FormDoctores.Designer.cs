@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoctores));
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nombreLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoctores));
             this.listaDoctoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.listaDoctoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -45,20 +46,37 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaDoctoresBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.listaDoctoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listaDoctoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listaDoctoresDataGridView = new System.Windows.Forms.DataGridView();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingNavigator)).BeginInit();
             this.listaDoctoresBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(40, 51);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 1;
+            idLabel.Text = "Id:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(241, 48);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 3;
+            nombreLabel.Text = "Nombre:";
             // 
             // listaDoctoresBindingNavigator
             // 
@@ -90,6 +108,17 @@
             this.listaDoctoresBindingNavigator.Size = new System.Drawing.Size(454, 25);
             this.listaDoctoresBindingNavigator.TabIndex = 0;
             this.listaDoctoresBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // listaDoctoresBindingSource
+            // 
+            this.listaDoctoresBindingSource.DataSource = typeof(BL.Doctor);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -123,16 +152,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -155,7 +177,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -187,54 +209,6 @@
             this.listaDoctoresBindingNavigatorSaveItem.Text = "Guardar datos";
             this.listaDoctoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaDoctoresBindingNavigatorSaveItem_Click);
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(12, 45);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 1;
-            idLabel.Text = "Id:";
-            // 
-            // idTextBox
-            // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDoctoresBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(65, 42);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(205, 20);
-            this.idTextBox.TabIndex = 2;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(12, 71);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 3;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // nombreTextBox
-            // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDoctoresBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(65, 68);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(205, 20);
-            this.nombreTextBox.TabIndex = 4;
-            // 
-            // listaDoctoresDataGridView
-            // 
-            this.listaDoctoresDataGridView.AutoGenerateColumns = false;
-            this.listaDoctoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaDoctoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.listaDoctoresDataGridView.DataSource = this.listaDoctoresBindingSource;
-            this.listaDoctoresDataGridView.Location = new System.Drawing.Point(15, 114);
-            this.listaDoctoresDataGridView.Name = "listaDoctoresDataGridView";
-            this.listaDoctoresDataGridView.Size = new System.Drawing.Size(300, 220);
-            this.listaDoctoresDataGridView.TabIndex = 5;
-            // 
             // toolStripButtonCancelar
             // 
             this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -246,11 +220,22 @@
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // idTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDoctoresBindingSource, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(75, 48);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(115, 20);
+            this.idTextBox.TabIndex = 2;
+            // 
+            // nombreTextBox
+            // 
+            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDoctoresBindingSource, "Nombre", true));
+            this.nombreTextBox.Location = new System.Drawing.Point(294, 45);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(148, 20);
+            this.nombreTextBox.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -258,15 +243,32 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // listaDoctoresBindingSource
+            // dataGridViewTextBoxColumn1
             // 
-            this.listaDoctoresBindingSource.DataSource = typeof(BL.Doctor);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // listaDoctoresDataGridView
+            // 
+            this.listaDoctoresDataGridView.AutoGenerateColumns = false;
+            this.listaDoctoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaDoctoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.listaDoctoresDataGridView.DataSource = this.listaDoctoresBindingSource;
+            this.listaDoctoresDataGridView.Location = new System.Drawing.Point(97, 144);
+            this.listaDoctoresDataGridView.Name = "listaDoctoresDataGridView";
+            this.listaDoctoresDataGridView.Size = new System.Drawing.Size(243, 47);
+            this.listaDoctoresDataGridView.TabIndex = 5;
             // 
             // FormDoctores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 400);
+            this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.sala_espera_medico_oficina_practicante_18591_6285;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(454, 366);
             this.Controls.Add(this.listaDoctoresDataGridView);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
@@ -278,8 +280,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingNavigator)).EndInit();
             this.listaDoctoresBindingNavigator.ResumeLayout(false);
             this.listaDoctoresBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,9 +305,9 @@
         private System.Windows.Forms.ToolStripButton listaDoctoresBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
-        private System.Windows.Forms.DataGridView listaDoctoresDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView listaDoctoresDataGridView;
     }
 }

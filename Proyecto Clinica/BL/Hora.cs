@@ -20,7 +20,7 @@ namespace BL
             ListaHoras = new BindingList<Hora>();
         }
 
-        public BindingList<Hora> ObtenerHorass()
+        public BindingList<Hora> ObtenerHoras()
         {
             _contexto.Horas.Load();
             ListaHoras = _contexto.Horas.Local.ToBindingList();

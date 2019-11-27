@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label pacienteLabel1;
             System.Windows.Forms.Label doctorLabel;
             System.Windows.Forms.Label fechaLabel1;
+            System.Windows.Forms.Label horaIdLabel;
+            System.Windows.Forms.Label idLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCitas));
-            System.Windows.Forms.Label descripcionLabel;
             this.listaCitaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.listaCitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,43 +51,27 @@
             this.listaCitaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idTextBox = new System.Windows.Forms.TextBox();
             this.pacienteComboBox = new System.Windows.Forms.ComboBox();
             this.doctorComboBox = new System.Windows.Forms.ComboBox();
             this.listaDoctoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doctoresBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.listaCitaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionComboBox = new System.Windows.Forms.ComboBox();
             this.listaHorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            idLabel = new System.Windows.Forms.Label();
+            this.horaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             pacienteLabel1 = new System.Windows.Forms.Label();
             doctorLabel = new System.Windows.Forms.Label();
             fechaLabel1 = new System.Windows.Forms.Label();
-            descripcionLabel = new System.Windows.Forms.Label();
+            horaIdLabel = new System.Windows.Forms.Label();
+            idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingNavigator)).BeginInit();
             this.listaCitaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctoresBLBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaCitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaHorasBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(28, 62);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 49;
-            idLabel.Text = "Id:";
             // 
             // pacienteLabel1
             // 
@@ -101,7 +85,7 @@
             // doctorLabel
             // 
             doctorLabel.AutoSize = true;
-            doctorLabel.Location = new System.Drawing.Point(386, 92);
+            doctorLabel.Location = new System.Drawing.Point(386, 99);
             doctorLabel.Name = "doctorLabel";
             doctorLabel.Size = new System.Drawing.Size(42, 13);
             doctorLabel.TabIndex = 55;
@@ -110,11 +94,29 @@
             // fechaLabel1
             // 
             fechaLabel1.AutoSize = true;
-            fechaLabel1.Location = new System.Drawing.Point(28, 89);
+            fechaLabel1.Location = new System.Drawing.Point(30, 96);
             fechaLabel1.Name = "fechaLabel1";
             fechaLabel1.Size = new System.Drawing.Size(40, 13);
             fechaLabel1.TabIndex = 56;
             fechaLabel1.Text = "Fecha:";
+            // 
+            // horaIdLabel
+            // 
+            horaIdLabel.AutoSize = true;
+            horaIdLabel.Location = new System.Drawing.Point(30, 129);
+            horaIdLabel.Name = "horaIdLabel";
+            horaIdLabel.Size = new System.Drawing.Size(33, 13);
+            horaIdLabel.TabIndex = 57;
+            horaIdLabel.Text = "Hora:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(28, 62);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 49;
+            idLabel.Text = "Id:";
             // 
             // listaCitaBindingNavigator
             // 
@@ -143,7 +145,7 @@
             this.listaCitaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaCitaBindingNavigator.Name = "listaCitaBindingNavigator";
             this.listaCitaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaCitaBindingNavigator.Size = new System.Drawing.Size(1129, 25);
+            this.listaCitaBindingNavigator.Size = new System.Drawing.Size(628, 25);
             this.listaCitaBindingNavigator.TabIndex = 43;
             this.listaCitaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -262,15 +264,6 @@
             // 
             this.pacienteBindingSource.DataSource = typeof(BL.Paciente);
             // 
-            // idTextBox
-            // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitaBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(86, 59);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idTextBox.TabIndex = 50;
-            // 
             // pacienteComboBox
             // 
             this.pacienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitaBindingSource, "Paciente", true));
@@ -290,7 +283,7 @@
             this.doctorComboBox.DisplayMember = "Nombre";
             this.doctorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.doctorComboBox.FormattingEnabled = true;
-            this.doctorComboBox.Location = new System.Drawing.Point(434, 89);
+            this.doctorComboBox.Location = new System.Drawing.Point(434, 96);
             this.doctorComboBox.Name = "doctorComboBox";
             this.doctorComboBox.Size = new System.Drawing.Size(178, 21);
             this.doctorComboBox.TabIndex = 56;
@@ -307,92 +300,48 @@
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaCitaBindingSource, "Fecha", true));
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(84, 89);
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(86, 96);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaDateTimePicker.TabIndex = 57;
             // 
-            // listaCitaDataGridView
-            // 
-            this.listaCitaDataGridView.AutoGenerateColumns = false;
-            this.listaCitaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaCitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.listaCitaDataGridView.DataSource = this.listaCitaBindingSource;
-            this.listaCitaDataGridView.Location = new System.Drawing.Point(42, 172);
-            this.listaCitaDataGridView.Name = "listaCitaDataGridView";
-            this.listaCitaDataGridView.Size = new System.Drawing.Size(545, 220);
-            this.listaCitaDataGridView.TabIndex = 57;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Hora";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Hora";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Fecha";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Paciente";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Paciente";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Doctor";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Doctor";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(28, 118);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(33, 13);
-            descripcionLabel.TabIndex = 57;
-            descripcionLabel.Text = "Hora:";
-            // 
-            // descripcionComboBox
-            // 
-            this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaHorasBindingSource, "Descripcion", true));
-            this.descripcionComboBox.DataSource = this.listaHorasBindingSource;
-            this.descripcionComboBox.DisplayMember = "Descripcion";
-            this.descripcionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.descripcionComboBox.FormattingEnabled = true;
-            this.descripcionComboBox.Location = new System.Drawing.Point(86, 118);
-            this.descripcionComboBox.Name = "descripcionComboBox";
-            this.descripcionComboBox.Size = new System.Drawing.Size(200, 21);
-            this.descripcionComboBox.TabIndex = 58;
-            this.descripcionComboBox.ValueMember = "Id";
-            // 
             // listaHorasBindingSource
             // 
             this.listaHorasBindingSource.DataSource = typeof(BL.Hora);
+            // 
+            // horaIdComboBox
+            // 
+            this.horaIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaCitaBindingSource, "Id", true));
+            this.horaIdComboBox.DataSource = this.listaHorasBindingSource;
+            this.horaIdComboBox.DisplayMember = "Descripcion";
+            this.horaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.horaIdComboBox.FormattingEnabled = true;
+            this.horaIdComboBox.Location = new System.Drawing.Point(88, 126);
+            this.horaIdComboBox.Name = "horaIdComboBox";
+            this.horaIdComboBox.Size = new System.Drawing.Size(198, 21);
+            this.horaIdComboBox.TabIndex = 58;
+            this.horaIdComboBox.ValueMember = "Id";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitaBindingSource, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(86, 59);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(200, 20);
+            this.idTextBox.TabIndex = 50;
             // 
             // FormCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1129, 478);
-            this.Controls.Add(this.descripcionComboBox);
-            this.Controls.Add(descripcionLabel);
-            this.Controls.Add(this.listaCitaDataGridView);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.sala_espera_mostrador_ilustracion_aeropuerto_1262_16630;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(628, 244);
+            this.Controls.Add(horaIdLabel);
+            this.Controls.Add(this.horaIdComboBox);
             this.Controls.Add(fechaLabel1);
             this.Controls.Add(this.fechaDateTimePicker);
             this.Controls.Add(doctorLabel);
@@ -402,8 +351,10 @@
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.listaCitaBindingNavigator);
+            this.DoubleBuffered = true;
             this.Name = "FormCitas";
             this.Text = "Citas";
+            this.Load += new System.EventHandler(this.FormCitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingNavigator)).EndInit();
             this.listaCitaBindingNavigator.ResumeLayout(false);
             this.listaCitaBindingNavigator.PerformLayout();
@@ -411,7 +362,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctoresBLBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaCitaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaHorasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -434,20 +384,14 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton listaCitaBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource pacienteBindingSource;
-        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.ComboBox pacienteComboBox;
         private System.Windows.Forms.ComboBox doctorComboBox;
         private System.Windows.Forms.BindingSource doctoresBLBindingSource;
         private System.Windows.Forms.BindingSource listaDoctoresBindingSource;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
-        private System.Windows.Forms.DataGridView listaCitaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.ComboBox descripcionComboBox;
         private System.Windows.Forms.BindingSource listaHorasBindingSource;
+        private System.Windows.Forms.ComboBox horaIdComboBox;
+        private System.Windows.Forms.TextBox idTextBox;
     }
 }

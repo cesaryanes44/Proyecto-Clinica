@@ -16,6 +16,7 @@ namespace Proyecto_Clinica
         CitasBL _citas;
         PacientesBL _pacientes;
         DoctoresBL _doctores;
+        HoraBL _horaBL;
 
         public FormCitas()
         {
@@ -30,6 +31,8 @@ namespace Proyecto_Clinica
             _citas = new CitasBL();
             listaCitaBindingSource.DataSource = _citas.ObtenerCita();
 
+            _horaBL = new HoraBL();
+            listaHorasBindingSource.DataSource = _horaBL.ObtenerHoras();
         }
 
         private void DeshabilitarHabilitarBotones(bool valor)
@@ -104,6 +107,11 @@ namespace Proyecto_Clinica
         {
             _citas.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
+        }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

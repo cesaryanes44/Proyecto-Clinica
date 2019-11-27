@@ -79,12 +79,6 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMedicamentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMedicamentos.Designer.cs">
-      <DependentUpon>FormMedicamentos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMedicamentos.resx">
-      <DependentUpon>FormMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
@@ -168,6 +159,21 @@
       <Project>{24386aa3-645f-4da3-9677-cb1e67def672}</Project>
       <Name>BL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\integral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sala-espera-mostrador-ilustracion-aeropuerto_1262-16630.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\72003ng01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sala-espera-medico-oficina-practicante_18591-6285.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

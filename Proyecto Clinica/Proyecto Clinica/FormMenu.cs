@@ -31,22 +31,14 @@ namespace Proyecto_Clinica
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formPacientes = new FormPacientes();
-            formPacientes.MdiParent = this;
-            formPacientes.Show();
+            
+            formPacientes.ShowDialog();
         }
-
-        private void medicamentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formMedicamentos = new FormMedicamentos();
-            formMedicamentos.MdiParent = this;
-            formMedicamentos.Show();
-        }
-
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formDoctores = new FormDoctores();
-            formDoctores.MdiParent = this;
-            formDoctores.Show();
+            
+            formDoctores.ShowDialog();
 
         }
 
@@ -58,15 +50,15 @@ namespace Proyecto_Clinica
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formFactura = new FormFactura();
-            formFactura.MdiParent = this;
-            formFactura.Show();
+            
+            formFactura.ShowDialog();
         }
 
         private void citasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var formCitas = new FormCitas();
-            formCitas.MdiParent = this;
-            formCitas.Show();
+            
+            formCitas.ShowDialog();
         }
     }
 }

@@ -31,16 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.rentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medicamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.citasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePasienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeMedicamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.citasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +60,6 @@
             // 
             this.rentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
-            this.medicamentosToolStripMenuItem,
             this.doctoresToolStripMenuItem,
             this.facturaToolStripMenuItem});
             this.rentaToolStripMenuItem.Name = "rentaToolStripMenuItem";
@@ -71,30 +69,38 @@
             // pacientesToolStripMenuItem
             // 
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
-            // 
-            // medicamentosToolStripMenuItem
-            // 
-            this.medicamentosToolStripMenuItem.Name = "medicamentosToolStripMenuItem";
-            this.medicamentosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.medicamentosToolStripMenuItem.Text = "Medicamentos";
-            this.medicamentosToolStripMenuItem.Click += new System.EventHandler(this.medicamentosToolStripMenuItem_Click);
             // 
             // doctoresToolStripMenuItem
             // 
             this.doctoresToolStripMenuItem.Name = "doctoresToolStripMenuItem";
-            this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.doctoresToolStripMenuItem.Text = "Doctores";
             this.doctoresToolStripMenuItem.Click += new System.EventHandler(this.doctoresToolStripMenuItem_Click);
             // 
             // facturaToolStripMenuItem
             // 
             this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.facturaToolStripMenuItem.Text = "Factura";
             this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
+            // 
+            // citasToolStripMenuItem
+            // 
+            this.citasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.citasToolStripMenuItem1});
+            this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.citasToolStripMenuItem.Text = "Reservacion";
+            // 
+            // citasToolStripMenuItem1
+            // 
+            this.citasToolStripMenuItem1.Name = "citasToolStripMenuItem1";
+            this.citasToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.citasToolStripMenuItem1.Text = "Citas";
+            this.citasToolStripMenuItem1.Click += new System.EventHandler(this.citasToolStripMenuItem1_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -128,32 +134,19 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
-            // 
-            // citasToolStripMenuItem
-            // 
-            this.citasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.citasToolStripMenuItem1});
-            this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.citasToolStripMenuItem.Text = "Reservacion";
-            // 
-            // citasToolStripMenuItem1
-            // 
-            this.citasToolStripMenuItem1.Name = "citasToolStripMenuItem1";
-            this.citasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.citasToolStripMenuItem1.Text = "Citas";
-            this.citasToolStripMenuItem1.Click += new System.EventHandler(this.citasToolStripMenuItem1_Click);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources._72003ng01;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(407, 287);
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMenu";
             this.Text = "Menu Principal";
@@ -171,7 +164,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem rentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medicamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doctoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDePasienteToolStripMenuItem;
