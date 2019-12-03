@@ -19,18 +19,26 @@ namespace Proyecto_Clinica
 
             var _citasBL = new CitasBL();
             var _doctorBL = new DoctoresBL();
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = _citasBL.ObtenerCitas();
+            var _pacientesBL = new PacientesBL();
+            var _horasBL = new HoraBL();
+
+            var bindingSource1 = new BindingSource();
+            bindingSource1.DataSource = _citasBL.ObtenerCitas();
 
             var bindingSource2 = new BindingSource();
             bindingSource2.DataSource = _doctorBL.ObtenerDoctores();
 
-            var listaBinding = new List<BindingSource>();
-            listaBinding.Add(bindingSource);
-            listaBinding.Add(bindingSource2);
+            var bindingSource3 = new BindingSource();
+            bindingSource3.DataSource = _pacientesBL.ObtenerPaciente();
+
+            var bindingSource4 = new BindingSource();
+            bindingSource4.DataSource = _horasBL.ObtenerHoras();
 
             var reporte = new ReporteCitas();
-            reporte.SetDataSource(listaBinding);
+            reporte.Database.Tables["Cita"].SetDataSource(bindingSource1);
+            reporte.Database.Tables["Doctor"].SetDataSource(bindingSource2);
+            reporte.Database.Tables["Paciente"].SetDataSource(bindingSource3);
+            reporte.Database.Tables["Hora"].SetDataSource(bindingSource4);
 
             crystalReportViewer1.ReportSource = reporte;
             crystalReportViewer1.RefreshReport();
