@@ -37,9 +37,9 @@
             this.citasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePasienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeMedicamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +106,7 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDePasienteToolStripMenuItem,
-            this.reporteDeMedicamentosToolStripMenuItem});
+            this.reporteDeCitasToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -114,14 +114,9 @@
             // reporteDePasienteToolStripMenuItem
             // 
             this.reporteDePasienteToolStripMenuItem.Name = "reporteDePasienteToolStripMenuItem";
-            this.reporteDePasienteToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.reporteDePasienteToolStripMenuItem.Text = "Reporte de Pasiente";
-            // 
-            // reporteDeMedicamentosToolStripMenuItem
-            // 
-            this.reporteDeMedicamentosToolStripMenuItem.Name = "reporteDeMedicamentosToolStripMenuItem";
-            this.reporteDeMedicamentosToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.reporteDeMedicamentosToolStripMenuItem.Text = "Reporte de Medicamentos";
+            this.reporteDePasienteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.reporteDePasienteToolStripMenuItem.Text = "Reporte de Paciente";
+            this.reporteDePasienteToolStripMenuItem.Click += new System.EventHandler(this.reporteDePasienteToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -137,6 +132,13 @@
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+            // 
+            // reporteDeCitasToolStripMenuItem
+            // 
+            this.reporteDeCitasToolStripMenuItem.Name = "reporteDeCitasToolStripMenuItem";
+            this.reporteDeCitasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.reporteDeCitasToolStripMenuItem.Text = "Reporte de Citas";
+            this.reporteDeCitasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeCitasToolStripMenuItem_Click);
             // 
             // FormMenu
             // 
@@ -167,11 +169,11 @@
         private System.Windows.Forms.ToolStripMenuItem doctoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDePasienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeMedicamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeCitasToolStripMenuItem;
     }
 }

@@ -60,5 +60,17 @@ namespace Proyecto_Clinica
             
             formCitas.ShowDialog();
         }
+
+        private void reporteDePasienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReportePacientes = new FormReportePacientes();
+            formReportePacientes.ShowDialog();
+        }
+
+        private void reporteDeCitasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReporteCitas = new FormReporteCitas();
+            formReporteCitas.ShowDialog();
+        }
     }
 }

@@ -259,7 +259,7 @@
             this.listaDoctoresDataGridView.DataSource = this.listaDoctoresBindingSource;
             this.listaDoctoresDataGridView.Location = new System.Drawing.Point(97, 144);
             this.listaDoctoresDataGridView.Name = "listaDoctoresDataGridView";
-            this.listaDoctoresDataGridView.Size = new System.Drawing.Size(243, 47);
+            this.listaDoctoresDataGridView.Size = new System.Drawing.Size(243, 78);
             this.listaDoctoresDataGridView.TabIndex = 5;
             // 
             // FormDoctores

@@ -63,6 +63,17 @@ namespace Proyecto_Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _123995123_cartoon_queue_hospital_inside_interior_with_people_concept_element_flat_design_style_vector_illustra {
+            get {
+                object obj = ResourceManager.GetObject("123995123-cartoon-queue-hospital-inside-interior-with-people-concept-element-flat" +
+                        "-design-style-vector-illustra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _72003ng01 {
             get {
                 object obj = ResourceManager.GetObject("72003ng01", resourceCulture);

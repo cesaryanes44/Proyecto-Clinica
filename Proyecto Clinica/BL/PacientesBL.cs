@@ -127,6 +127,8 @@ namespace BL
 
     public class Resultado
     {
+        public bool Exitoso2;
+
         public bool Exitoso { get; set; }
         public string Mensaje { get; set; }
     }

@@ -13,26 +13,26 @@ namespace Proyecto_Clinica
 {
     public partial class FormCitas : Form
     {
-        CitasBL _citas;
-        PacientesBL _pacientes;
-        DoctoresBL _doctores;
-        HoraBL _horaBL;
+        HoraBL _horasBL;
+        PacientesBL _pacientesBL;
+        DoctoresBL _doctoresBL;
+        CitasBL _citasBL;
 
         public FormCitas()
         {
             InitializeComponent();
 
-            _pacientes = new PacientesBL();
-            pacienteBindingSource.DataSource = _pacientes.ObtenerPaciente();
+            _horasBL = new HoraBL();
+            listaHorasBindingSource.DataSource = _horasBL.ObtenerHoras();
 
-            _doctores = new DoctoresBL();
-            listaDoctoresBindingSource.DataSource = _doctores.ObtenerDoctores();
+            _pacientesBL = new PacientesBL();
+            listaPacienteBindingSource.DataSource = _pacientesBL.ObtenerPaciente();
 
-            _citas = new CitasBL();
-            listaCitaBindingSource.DataSource = _citas.ObtenerCita();
+            _doctoresBL = new DoctoresBL();
+            listaDoctoresBindingSource.DataSource = _doctoresBL.ObtenerDoctores();
 
-            _horaBL = new HoraBL();
-            listaHorasBindingSource.DataSource = _horaBL.ObtenerHoras();
+            _citasBL = new CitasBL();
+            listaCitaBindingSource.DataSource = _citasBL.ObtenerCitas();
         }
 
         private void DeshabilitarHabilitarBotones(bool valor)
@@ -51,7 +51,7 @@ namespace Proyecto_Clinica
 
         private void Eliminar(int id)
         {
-            var resultado = _citas.EliminarCita(id);
+            var resultado = _citasBL.EliminarCita(id);
 
             if (resultado == true)
             {
@@ -65,7 +65,7 @@ namespace Proyecto_Clinica
 
         private void bindingNavigatorAddNewItem_Click_1(object sender, EventArgs e)
         {
-            _citas.AgregarCita();
+            _citasBL.AgregarCita();
             listaCitaBindingSource.MoveLast();
 
             DeshabilitarHabilitarBotones(false);
@@ -86,31 +86,48 @@ namespace Proyecto_Clinica
 
         private void listaCitaBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
         {
-            listaCitaBindingSource.EndEdit();
+
+            listaDoctoresBindingSource.EndEdit();
             var cita = (Cita)listaCitaBindingSource.Current;
 
-            var resultado = _citas.GuardarCitas(cita);
+            var resultado = _citasBL.GuardarCita(cita);
 
             if (resultado.Exitoso == true)
             {
-                listaCitaBindingSource.ResetBindings(false);
+                listaDoctoresBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
-                MessageBox.Show("Cita Guardada");
+                MessageBox.Show("Doctor Guardado");
             }
             else
             {
                 MessageBox.Show(resultado.Mensaje);
             }
+
         }
 
         private void toolStripButtonCancelar_Click_1(object sender, EventArgs e)
         {
-            _citas.CancelarCambios();
+            _citasBL.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
         }
 
-        private void FormCitas_Load(object sender, EventArgs e)
+        private void listaCitaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            listaCitaBindingSource.EndEdit();
+            var cita = (Cita)listaCitaBindingSource.Current;
+
+            var resultado = _citasBL.GuardarCita(cita);
+
+            if (resultado.Exitoso == true)
+            {
+                listaCitaBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Doctor Guardado");
+            }
+            else
+            {
+                MessageBox.Show(resultado.Mensaje);
+            }
 
         }
     }

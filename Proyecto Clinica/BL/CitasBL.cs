@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-   public class CitasBL
+    public class CitasBL
     {
         Contexto _contexto;
         public BindingList<Cita> ListaCita { get; set; }
@@ -19,7 +19,7 @@ namespace BL
             ListaCita = new BindingList<Cita>();
         }
 
-        public BindingList<Cita> ObtenerCita()
+        public BindingList<Cita> ObtenerCitas()
         {
             _contexto.Citas.Load();
             ListaCita = _contexto.Citas.Local.ToBindingList();
@@ -36,7 +36,7 @@ namespace BL
             }
         }
 
-        public Resultado GuardarCitas(Cita cita)
+        public Resultado GuardarCita(Cita cita)
         {
             var resultado = Validar(cita);
             if (resultado.Exitoso == false)
@@ -71,7 +71,7 @@ namespace BL
             return false;
         }
 
-        private Resultado Validar(Cita cita)
+        private Resultado Validar(Cita cinta)
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
@@ -85,8 +85,15 @@ namespace BL
         public int HoraId { get; set; }
         public Hora Hora { get; set; }
         public DateTime Fecha { get; set; }
-        public String Paciente { get; set; }
-        public string Doctor { get; set; }
+        public int PacienteId { get; set; }
+        public Paciente Paciente { get; set; }
+        public int DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+
+        public Cita()
+        {
+            Fecha = DateTime.Now;
+        }
     }
 }
 

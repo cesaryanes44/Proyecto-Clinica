@@ -420,7 +420,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.images;
+            this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources._123995123_cartoon_queue_hospital_inside_interior_with_people_concept_element_flat_design_style_vector_illustra;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(624, 344);
             this.Controls.Add(tipoIdLabel);
