@@ -37,10 +37,13 @@
             this.citasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePasienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -118,6 +121,13 @@
             this.reporteDePasienteToolStripMenuItem.Text = "Reporte de Paciente";
             this.reporteDePasienteToolStripMenuItem.Click += new System.EventHandler(this.reporteDePasienteToolStripMenuItem_Click);
             // 
+            // reporteDeCitasToolStripMenuItem
+            // 
+            this.reporteDeCitasToolStripMenuItem.Name = "reporteDeCitasToolStripMenuItem";
+            this.reporteDeCitasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.reporteDeCitasToolStripMenuItem.Text = "Reporte de Citas";
+            this.reporteDeCitasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeCitasToolStripMenuItem_Click);
+            // 
             // seguridadToolStripMenuItem
             // 
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -133,12 +143,21 @@
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
-            // reporteDeCitasToolStripMenuItem
+            // statusStrip1
             // 
-            this.reporteDeCitasToolStripMenuItem.Name = "reporteDeCitasToolStripMenuItem";
-            this.reporteDeCitasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.reporteDeCitasToolStripMenuItem.Text = "Reporte de Citas";
-            this.reporteDeCitasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeCitasToolStripMenuItem_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 265);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(407, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(50, 17);
+            this.toolStripStatusLabel1.Text = "Usuario:";
             // 
             // FormMenu
             // 
@@ -148,6 +167,7 @@
             this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources._72003ng01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(407, 287);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMenu";
@@ -156,6 +176,8 @@
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +197,7 @@
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reporteDeCitasToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

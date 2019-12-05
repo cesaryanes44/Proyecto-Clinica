@@ -236,6 +236,7 @@
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(148, 20);
             this.nombreTextBox.TabIndex = 4;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // dataGridViewTextBoxColumn2
             // 

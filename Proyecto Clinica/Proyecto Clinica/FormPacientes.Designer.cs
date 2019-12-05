@@ -304,6 +304,7 @@
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(282, 20);
             this.direccionTextBox.TabIndex = 2;
+            this.direccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.direccionTextBox_KeyPress);
             // 
             // edadTextBox
             // 
@@ -312,6 +313,7 @@
             this.edadTextBox.Name = "edadTextBox";
             this.edadTextBox.Size = new System.Drawing.Size(282, 20);
             this.edadTextBox.TabIndex = 4;
+            this.edadTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edadTextBox_KeyPress);
             // 
             // idTextBox
             // 
@@ -329,6 +331,7 @@
             this.noIdentidadTextBox.Name = "noIdentidadTextBox";
             this.noIdentidadTextBox.Size = new System.Drawing.Size(282, 20);
             this.noIdentidadTextBox.TabIndex = 8;
+            this.noIdentidadTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.noIdentidadTextBox_KeyPress);
             // 
             // nombreTextBox
             // 
@@ -337,6 +340,7 @@
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(282, 20);
             this.nombreTextBox.TabIndex = 10;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // telefonoTextBox
             // 
@@ -345,6 +349,7 @@
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(282, 20);
             this.telefonoTextBox.TabIndex = 12;
+            this.telefonoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonoTextBox_KeyPress);
             // 
             // fotoPictureBox
             // 

@@ -97,6 +97,14 @@ namespace Proyecto_Clinica
             _doctores.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
         }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(nombreTextBox.Text))
+            {
+                listaDoctoresBindingNavigatorSaveItem.PerformClick();
+            }
+        }
     }
  }
 

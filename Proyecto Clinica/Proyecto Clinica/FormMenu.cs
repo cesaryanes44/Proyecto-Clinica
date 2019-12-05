@@ -26,6 +26,12 @@ namespace Proyecto_Clinica
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
+
+            if (Program.UsuarioLogueado != null)
+            {
+                toolStripStatusLabel1.Text = "Usuario: " + Program.UsuarioLogueado.Nombre;
+            }
+
         }
 
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)

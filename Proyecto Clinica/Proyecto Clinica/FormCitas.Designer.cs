@@ -33,6 +33,7 @@
             System.Windows.Forms.Label horaIdLabel;
             System.Windows.Forms.Label doctorIdLabel;
             System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.Label fechaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCitas));
             this.listaCitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaCitaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -56,22 +57,30 @@
             this.doctorIdComboBox = new System.Windows.Forms.ComboBox();
             this.listaDoctoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idTextBox = new System.Windows.Forms.TextBox();
+            this.dataSet = new Proyecto_Clinica.DataSet();
+            this.citaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.citaTableAdapter = new Proyecto_Clinica.DataSetTableAdapters.CitaTableAdapter();
+            this.tableAdapterManager = new Proyecto_Clinica.DataSetTableAdapters.TableAdapterManager();
+            this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             pacienteIdLabel = new System.Windows.Forms.Label();
             horaIdLabel = new System.Windows.Forms.Label();
             doctorIdLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
+            fechaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingNavigator)).BeginInit();
             this.listaCitaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaPacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaHorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pacienteIdLabel
             // 
             pacienteIdLabel.AutoSize = true;
-            pacienteIdLabel.Location = new System.Drawing.Point(387, 93);
+            pacienteIdLabel.Location = new System.Drawing.Point(371, 55);
             pacienteIdLabel.Name = "pacienteIdLabel";
             pacienteIdLabel.Size = new System.Drawing.Size(52, 13);
             pacienteIdLabel.TabIndex = 1;
@@ -80,7 +89,7 @@
             // horaIdLabel
             // 
             horaIdLabel.AutoSize = true;
-            horaIdLabel.Location = new System.Drawing.Point(67, 154);
+            horaIdLabel.Location = new System.Drawing.Point(43, 98);
             horaIdLabel.Name = "horaIdLabel";
             horaIdLabel.Size = new System.Drawing.Size(33, 13);
             horaIdLabel.TabIndex = 3;
@@ -89,7 +98,7 @@
             // doctorIdLabel
             // 
             doctorIdLabel.AutoSize = true;
-            doctorIdLabel.Location = new System.Drawing.Point(397, 151);
+            doctorIdLabel.Location = new System.Drawing.Point(371, 104);
             doctorIdLabel.Name = "doctorIdLabel";
             doctorIdLabel.Size = new System.Drawing.Size(42, 13);
             doctorIdLabel.TabIndex = 5;
@@ -98,11 +107,20 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(66, 96);
+            idLabel.Location = new System.Drawing.Point(43, 51);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 7;
             idLabel.Text = "Id:";
+            // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Location = new System.Drawing.Point(43, 146);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.TabIndex = 9;
+            fechaLabel.Text = "Fecha:";
             // 
             // listaCitaBindingSource
             // 
@@ -249,7 +267,7 @@
             this.pacienteIdComboBox.DisplayMember = "Nombre";
             this.pacienteIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pacienteIdComboBox.FormattingEnabled = true;
-            this.pacienteIdComboBox.Location = new System.Drawing.Point(457, 90);
+            this.pacienteIdComboBox.Location = new System.Drawing.Point(439, 55);
             this.pacienteIdComboBox.Name = "pacienteIdComboBox";
             this.pacienteIdComboBox.Size = new System.Drawing.Size(121, 21);
             this.pacienteIdComboBox.TabIndex = 2;
@@ -266,9 +284,9 @@
             this.horaIdComboBox.DisplayMember = "Descripcion";
             this.horaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.horaIdComboBox.FormattingEnabled = true;
-            this.horaIdComboBox.Location = new System.Drawing.Point(118, 151);
+            this.horaIdComboBox.Location = new System.Drawing.Point(97, 93);
             this.horaIdComboBox.Name = "horaIdComboBox";
-            this.horaIdComboBox.Size = new System.Drawing.Size(121, 21);
+            this.horaIdComboBox.Size = new System.Drawing.Size(200, 21);
             this.horaIdComboBox.TabIndex = 4;
             this.horaIdComboBox.ValueMember = "Id";
             // 
@@ -283,7 +301,7 @@
             this.doctorIdComboBox.DisplayMember = "Nombre";
             this.doctorIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.doctorIdComboBox.FormattingEnabled = true;
-            this.doctorIdComboBox.Location = new System.Drawing.Point(457, 148);
+            this.doctorIdComboBox.Location = new System.Drawing.Point(439, 101);
             this.doctorIdComboBox.Name = "doctorIdComboBox";
             this.doctorIdComboBox.Size = new System.Drawing.Size(121, 21);
             this.doctorIdComboBox.TabIndex = 6;
@@ -296,10 +314,43 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitaBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(91, 93);
+            this.idTextBox.Location = new System.Drawing.Point(97, 48);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox.Size = new System.Drawing.Size(200, 20);
             this.idTextBox.TabIndex = 8;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // citaBindingSource
+            // 
+            this.citaBindingSource.DataMember = "Cita";
+            this.citaBindingSource.DataSource = this.dataSet;
+            // 
+            // citaTableAdapter
+            // 
+            this.citaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CitaTableAdapter = this.citaTableAdapter;
+            this.tableAdapterManager.DoctorTableAdapter = null;
+            this.tableAdapterManager.HoraTableAdapter = null;
+            this.tableAdapterManager.PacienteTableAdapter = null;
+            this.tableAdapterManager.TipoTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Proyecto_Clinica.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // fechaDateTimePicker
+            // 
+            this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.citaBindingSource, "Fecha", true));
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(97, 146);
+            this.fechaDateTimePicker.Name = "fechaDateTimePicker";
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaDateTimePicker.TabIndex = 10;
             // 
             // FormCitas
             // 
@@ -310,6 +361,8 @@
             this.BackgroundImage = global::Proyecto_Clinica.Properties.Resources.sala_espera_mostrador_ilustracion_aeropuerto_1262_16630;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(669, 249);
+            this.Controls.Add(fechaLabel);
+            this.Controls.Add(this.fechaDateTimePicker);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(doctorIdLabel);
@@ -322,6 +375,7 @@
             this.DoubleBuffered = true;
             this.Name = "FormCitas";
             this.Text = "Citas";
+            this.Load += new System.EventHandler(this.FormCitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitaBindingNavigator)).EndInit();
             this.listaCitaBindingNavigator.ResumeLayout(false);
@@ -329,6 +383,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaPacienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaHorasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaDoctoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +414,10 @@
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.BindingSource listaPacienteBindingSource;
         private System.Windows.Forms.BindingSource listaDoctoresBindingSource;
+        private DataSet dataSet;
+        private System.Windows.Forms.BindingSource citaBindingSource;
+        private DataSetTableAdapters.CitaTableAdapter citaTableAdapter;
+        private DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
     }
 }

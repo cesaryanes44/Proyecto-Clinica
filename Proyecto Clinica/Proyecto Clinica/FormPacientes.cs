@@ -146,5 +146,45 @@ namespace Proyecto_Clinica
         {
 
         }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(nombreTextBox.Text))
+            {
+                noIdentidadTextBox.Focus();
+            }
+        }
+
+        private void noIdentidadTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(noIdentidadTextBox.Text))
+            {
+                edadTextBox.Focus();
+            }
+        }
+
+        private void edadTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(edadTextBox.Text))
+            {
+                direccionTextBox.Focus();
+            }
+        }
+
+        private void direccionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(direccionTextBox.Text))
+            {
+                telefonoTextBox.Focus();
+            }
+        }
+
+        private void telefonoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(telefonoTextBox.Text))
+            {
+                listaPacienteBindingNavigatorSaveItem.PerformClick();
+            }
+        }
     }
 }

@@ -130,5 +130,12 @@ namespace Proyecto_Clinica
             }
 
         }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet.Cita' Puede moverla o quitarla según sea necesario.
+            this.citaTableAdapter.Fill(this.dataSet.Cita);
+
+        }
     }
 }
