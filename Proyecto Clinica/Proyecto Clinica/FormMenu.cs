@@ -31,6 +31,10 @@ namespace Proyecto_Clinica
             {
                 toolStripStatusLabel1.Text = "Usuario: " + Program.UsuarioLogueado.Nombre;
             }
+            else
+            {
+                Application.Exit();
+            }
 
         }
 
