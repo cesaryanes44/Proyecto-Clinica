@@ -15,6 +15,12 @@ namespace BL
             usuarioAdmin.Nombre = "cesar";
             usuarioAdmin.Contrasena = "1234";
 
+            var usuarioEnfermera = new Usuario();
+            usuarioEnfermera.Nombre = "enfermera";
+            usuarioEnfermera.Contrasena = "456";
+
+            
+            contexto.Usuarios.Add(usuarioEnfermera);
             contexto.Usuarios.Add(usuarioAdmin);
 
             var categoria1 = new Categoria();

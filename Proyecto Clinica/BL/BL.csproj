@@ -55,6 +55,7 @@
     <Compile Include="DatosdeInicio.cs" />
     <Compile Include="DoctoresBL.cs" />
     <Compile Include="FacturaBL.cs" />
+    <Compile Include="Herramientas.cs" />
     <Compile Include="Hora.cs" />
     <Compile Include="PacientesBL.cs" />
     <Compile Include="SeguridadBL.cs" />
