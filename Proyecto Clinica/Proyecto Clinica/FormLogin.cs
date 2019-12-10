@@ -38,8 +38,6 @@ namespace Proyecto_Clinica
             {
                 Program.UsuarioLogueado = usuarioDB;
 
-                Herramientas.Tipousuario = usuario;
-
                 this.Close();
             }
             else

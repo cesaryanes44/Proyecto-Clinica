@@ -28,35 +28,39 @@ namespace Proyecto_Clinica
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
 
-            if (Herramientas.Tipousuario == "admin")
-            {
-                pacientesToolStripMenuItem.Enabled = true;
-                doctoresToolStripMenuItem.Enabled = true;
-                citasToolStripMenuItem.Enabled = true;
-                reporteDeCitasToolStripMenuItem.Enabled = true;
-                reporteDePasienteToolStripMenuItem.Enabled = true;
-            }
-
-            if (Herramientas.Tipousuario == "enfermera")
-            {
-                pacientesToolStripMenuItem.Enabled = true;
-                doctoresToolStripMenuItem.Enabled = true;
-                citasToolStripMenuItem.Enabled = true;
-                reporteDeCitasToolStripMenuItem.Enabled = false;
-                reporteDePasienteToolStripMenuItem.Enabled = false;
-                seguridadToolStripMenuItem.Enabled = false;
-            }
-
 
             if (Program.UsuarioLogueado != null)
             {
-                toolStripStatusLabel1.Text = "Usuario: " + Program.UsuarioLogueado.Nombre;
+                toolStripStatusLabel1.Text = "Usuario: "
+                    + Program.UsuarioLogueado.Nombre;
+
+                if (Program.UsuarioLogueado.TipoUsuario == "Administrador")
+                {
+                    pacientesToolStripMenuItem.Visible = false;
+                    doctoresToolStripMenuItem.Visible = false;
+                    reporteDeCitasToolStripMenuItem.Visible = false;
+                    reporteDePasienteToolStripMenuItem.Visible = false;
+                    citasToolStripMenuItem.Visible = false;
+                    usuariosToolStripMenuItem.Visible = false;
+                    seguridadToolStripMenuItem.Visible = false;
+                }
+
+                if (Program.UsuarioLogueado.TipoUsuario == "Enfermera")
+                {
+                    pacientesToolStripMenuItem.Visible = true;
+                    doctoresToolStripMenuItem.Visible = true;
+                    reporteDeCitasToolStripMenuItem.Visible = false;
+                    reporteDePasienteToolStripMenuItem.Visible = false;
+                    citasToolStripMenuItem.Visible = true;
+                    usuariosToolStripMenuItem.Visible = false;
+                    seguridadToolStripMenuItem.Visible = false;
+                }
+
             }
             else
             {
                 Application.Exit();
             }
-
         }
 
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +106,12 @@ namespace Proyecto_Clinica
         {
             var formReporteCitas = new FormReporteCitas();
             formReporteCitas.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formUsuario = new FormUsuario();
+            formUsuario.ShowDialog();
         }
     }
 }

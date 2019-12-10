@@ -42,6 +42,7 @@
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,8 @@
             this.rentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
             this.doctoresToolStripMenuItem,
-            this.facturaToolStripMenuItem});
+            this.facturaToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
             this.rentaToolStripMenuItem.Name = "rentaToolStripMenuItem";
             this.rentaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.rentaToolStripMenuItem.Text = "Archivo";
@@ -72,21 +74,21 @@
             // pacientesToolStripMenuItem
             // 
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
             // doctoresToolStripMenuItem
             // 
             this.doctoresToolStripMenuItem.Name = "doctoresToolStripMenuItem";
-            this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.doctoresToolStripMenuItem.Text = "Doctores";
             this.doctoresToolStripMenuItem.Click += new System.EventHandler(this.doctoresToolStripMenuItem_Click);
             // 
             // facturaToolStripMenuItem
             // 
             this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.facturaToolStripMenuItem.Text = "Factura";
             this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
             // 
@@ -159,6 +161,13 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(50, 17);
             this.toolStripStatusLabel1.Text = "Usuario:";
             // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,5 +208,6 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDeCitasToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
     }
 }

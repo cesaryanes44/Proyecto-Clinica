@@ -12,16 +12,16 @@ namespace BL
         protected override void Seed(Contexto contexto)
         {
             var usuarioAdmin = new Usuario();
-            usuarioAdmin.Nombre = "cesar";
-            usuarioAdmin.Contrasena = "1234";
+            usuarioAdmin.Nombre = "admin";
+            usuarioAdmin.Contrasena = "123";
+
+            contexto.Usuarios.Add(usuarioAdmin);
 
             var usuarioEnfermera = new Usuario();
             usuarioEnfermera.Nombre = "enfermera";
             usuarioEnfermera.Contrasena = "456";
 
-            
             contexto.Usuarios.Add(usuarioEnfermera);
-            contexto.Usuarios.Add(usuarioAdmin);
 
             var categoria1 = new Categoria();
             categoria1.Descripcion = "Niño(a)";
