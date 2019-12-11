@@ -71,10 +71,18 @@ namespace BL
             return false;
         }
 
-        private Resultado Validar(Cita cinta)
+        private Resultado Validar(Cita cita)
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
+
+            var citaExistente = _contexto.Citas.Include("Pacientes").FirstOrDefault(r => r.Fecha == cita.Fecha && r.HoraId == cita.HoraId);
+
+            if(citaExistente != null)
+            {
+                resultado.Mensaje = "Ya existe una cita para el paciente " + citaExistente.Paciente.Nombre;
+                resultado.Exitoso = false;
+            }
 
             return resultado;
         }
